@@ -1,6 +1,6 @@
 # Python学习笔记
 
-##  1,缺失值的处理
+##  缺失值的处理
 
 ---统计各列缺失值的数量
 
@@ -20,3 +20,23 @@ data.replace(preivous,now,times)
 
 times即最多替换次数
 
+## 销售数据分析20200128
+
+---open certain sheet
+xls.parse('sheet1')
+
+---step 1,2,3...
+
+data.shape
+
+data.index
+
+data.columns
+
+data.count()
+
+## 数据清洗
+
+数据清洗过程包括：选择子集、列名重命名、缺失数据处理、数据类型转换、数据排序及异常值处理
+
+### 选择子集
