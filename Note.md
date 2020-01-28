@@ -22,7 +22,10 @@ times即最多替换次数
 
 ## 销售数据分析20200128
 
+##获取数据、观察数据
+
 ---open certain sheet
+
 xls.parse('sheet1')
 
 ---step 1,2,3...
