@@ -147,7 +147,9 @@ times即最多替换次数
 
     totalMoney = data.loc[:,'实收金额'].sum()
     
----画图时用于显示中文字符from pylab import mpl
+---画图时用于显示中文字符
+
+    from pylab import mpl
 
     mpl.rcParams['font.sans-serif'] = ['SimHei'] # SimHei是黑体的意思
     
@@ -157,7 +159,8 @@ times即最多替换次数
     
     monthDf = gb.sum()
     
----
+---groupby两列数据
+
     medicine = groupDf[['商品名称','销售数量']]
     
     bk = medicine.groupby('商品名称')[['销售数量']]
