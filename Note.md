@@ -62,8 +62,24 @@ data.fillna('NULL') 用NULL补充
 
 ### 4.数据类型转换
 
-原始保存数据是object结构，但某些列需要用到数字类型。
+原始保存数据是object结构，但某些列需要用到数字类型或分割数据。
 
+#### 数据类型转换
 
+data['列名']=data['列名'].astype('float')
 
+#### 分割数据
+
+对某列进行特殊处理。
+
+例：2020-01-01 星期一    只保留日期，取消星期一。
+'''python
+def splittime(timeadd):
+
+    timelist=[]
+    
+    for v in timeadd:
+'''    
+    
+    
 
