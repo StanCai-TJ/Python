@@ -161,9 +161,9 @@ times即最多替换次数
     
 ---groupby两列数据
 
-    medicine = groupDf[['商品名称','销售数量']]
+    sales = groupDf[['商品名称','销售数量']]
     
-    bk = medicine.groupby('商品名称')[['销售数量']]
+    bk = sales.groupby('商品名称')[['销售数量']]
     
     re_medicine = bk.sum()
     
