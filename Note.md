@@ -73,6 +73,7 @@ data['列名']=data['列名'].astype('float')
 对某列进行特殊处理。
 
 例：2020-01-01 星期一    只保留日期，取消星期一。
+
 '''python
 
 def splittime(timeadd):
@@ -81,7 +82,9 @@ def splittime(timeadd):
     
     for v in timeadd:
     
-'''    
+''' 
+
+
     
     
 
