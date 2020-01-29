@@ -1,25 +1,5 @@
 # Python学习笔记
 
-##  缺失值的处理
-
----统计各列缺失值的数量
-
-data.isnull().sum()
-
----查看是否存在缺失值
-
-data.isnull().any()
-
-若缺失值是null，则需要先进行替换
-
-data=data.replace('null',np.NaN)
-
-注：replace语法
-
-data.replace(preivous,now,times)
-
-times即最多替换次数
-
 ## 销售数据分析20200128
 
 ## 获取数据、观察数据
@@ -51,4 +31,35 @@ data.count()
 有一些列名容易有歧义，不好理解，对有歧义的列名重新命名。
 
 data.rename(columns=('改动前':'改动后'),inplace=True)
+
+### 3.缺失数据处理
+
+处理方法：1，删除含有缺失值的数据；2，补全缺失记录。
+
+---统计各列缺失值的数量
+
+data.isnull().sum()
+
+---查看是否存在缺失值
+
+data.isnull().any()
+
+若缺失值是null，则需要先进行替换
+
+data=data.replace('null',np.NaN)
+
+注：replace语法
+
+data.replace(preivous,now,times)
+
+times即最多替换次数
+
+#### 删除缺失数据
+
+data = data.dropna(subset=['列名1','列名2']，how='any')
+
+####  缺失值填充
+
+data.fillna(NULL) 用NULL补充
+
 
