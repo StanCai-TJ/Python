@@ -74,15 +74,31 @@ data['列名']=data['列名'].astype('float')
 
 例：2020-01-01 星期一    只保留日期，取消星期一。
 
-'''
+    def split_time(timeadd):
 
-def splittime(timeadd):
+        time_list=[]
 
-    timelist=[]
+        for v in time_add:
+        
+            data=v.spilt(' ')[0]
+
+            time_list.append(data)
+            
+        time_series=Series(timelist)
+        
+        return time_series
+        
+    time=data.loc[:,'销售时间']
     
-    for v in timeadd:
+    data=split_time(time)
     
-''' 
+    data.loc[:,'销售时间']=data
+    
+    
+        
+        
+        
+        
 
 
     
