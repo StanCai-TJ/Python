@@ -105,6 +105,40 @@ times即最多替换次数
 
 #### 数据转换为日期格式
 
+    data.loc[:,'销售时间']=pd.to_datatime(data.loc[:,'销售时间'],format='%Y-%m-%d',errors='coerce')
+    
+由于转换格式后，可能会出现不符合格式的日期，需要进行drop处理。
+
+    data = data.dropna(subset=['列名1','列名2']，how='any')
+    
+### 5.数据排序
+
+    data = data.sort_values(by='销售时间',ascending=True)
+    
+    #重置索引
+    
+    data = data.reset_index(drop=True)
+    
+### 6.异常值处理
+
+    # 将"销售数量"这一列中小于0的数排除掉
+    
+    pop = data.loc[:,'销售数量'] > 0
+    
+    data = data.loc[pop,:]
+    
+    或
+    
+    above_zero= data['销售数量'].map(lambda x: x>0)
+    
+    data = data['销售数量'][above_zero]
+    
+
+    
+    
+    
+
+    
 
 
         
