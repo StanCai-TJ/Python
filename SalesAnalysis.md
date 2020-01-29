@@ -167,6 +167,18 @@ times即最多替换次数
     
     re_medicine = bk.sum()
     
+### 新增一列计算利润率
+
+---对于两列运算，新增一列数据的运算
+
+    data1 = data['利润额']/data['销售额']
+    
+    data['利润率'] = data1.apply(lambda x : format(x,'.2%'))
+    
+    
+    
+    
+    
     
     
     
