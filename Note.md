@@ -1,6 +1,4 @@
-# Python学习笔记
-
-## 销售数据分析20200128
+# 销售数据分析---学习笔记2020/01
 
 ## 获取数据、观察数据
 
@@ -60,6 +58,12 @@ data = data.dropna(subset=['列名1','列名2']，how='any')
 
 ####  缺失值填充
 
-data.fillna(NULL) 用NULL补充
+data.fillna('NULL') 用NULL补充
+
+### 4.数据类型转换
+
+原始保存数据是object结构，但某些列需要用到数字类型。
+
+
 
 
