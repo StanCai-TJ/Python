@@ -133,8 +133,41 @@ times即最多替换次数
     
     data = data['销售数量'][above_zero]
     
+## 数据分析
 
+---在操作之前先复制一份数据，防止影响清洗后的数据
+
+    groupDF = data
     
+---以时间为轴进行分析，注意index问题
+    
+    groupDf.index = groupDf['销售时间']
+
+---对列进行运算
+
+    totalMoney = data.loc[:,'实收金额'].sum()
+    
+---画图时用于显示中文字符from pylab import mpl
+
+    mpl.rcParams['font.sans-serif'] = ['SimHei'] # SimHei是黑体的意思
+    
+---将销售时间聚合按月分组
+    
+    gb = groupDf.groupby(groupDf.index.month)
+    
+    monthDf = gb.sum()
+    
+---
+    medicine = groupDf[['商品名称','销售数量']]
+    
+    bk = medicine.groupby('商品名称')[['销售数量']]
+    
+    re_medicine = bk.sum()
+    
+    
+    
+    
+
     
     
 
