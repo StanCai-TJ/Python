@@ -4,17 +4,17 @@
 
 ---open certain sheet
 
-xls.parse('sheet1')
+    xls.parse('sheet1')
 
 ---step 1,2,3...
 
-data.shape
+    data.shape
 
-data.index
+    data.index
 
-data.columns
+    data.columns
 
-data.count()
+    data.count()
 
 ## 数据清洗
 
@@ -28,7 +28,7 @@ data.count()
 
 有一些列名容易有歧义，不好理解，对有歧义的列名重新命名。
 
-data.rename(columns=('改动前':'改动后'),inplace=True)
+    data.rename(columns=('改动前':'改动后'),inplace=True)
 
 ### 3.缺失数据处理
 
@@ -36,29 +36,29 @@ data.rename(columns=('改动前':'改动后'),inplace=True)
 
 ---统计各列缺失值的数量
 
-data.isnull().sum()
+    data.isnull().sum()
 
 ---查看是否存在缺失值
 
-data.isnull().any()
+    data.isnull().any()
 
 若缺失值是null，则需要先进行替换
 
-data=data.replace('null',np.NaN)
+    data=data.replace('null',np.NaN)
 
 注：replace语法
 
-data.replace(preivous,now,times)
+    data.replace(preivous,now,times)
 
 times即最多替换次数
 
 #### 删除缺失数据
 
-data = data.dropna(subset=['列名1','列名2']，how='any')
+    data = data.dropna(subset=['列名1','列名2']，how='any')
 
 ####  缺失值填充
 
-data.fillna('NULL') 用NULL补充
+    data.fillna('NULL') 用NULL补充
 
 ### 4.数据类型转换
 
@@ -66,13 +66,15 @@ data.fillna('NULL') 用NULL补充
 
 #### 数据类型转换
 
-data['列名']=data['列名'].astype('float')
+    data['列名']=data['列名'].astype('float')
 
 #### 分割数据
 
 对某列进行特殊处理。
 
 例：2020-01-01 星期一    只保留日期，取消星期一。
+
+方法一：
 
     def split_time(timeadd):
 
@@ -94,7 +96,17 @@ data['列名']=data['列名'].astype('float')
     
     data.loc[:,'销售时间']=data
     
+方法二：
+
+    f=lambda x:x.split(' ').[0]
     
+    data[:,'销售时间']=data[:,'销售时间'].map(f)
+    
+
+#### 数据转换为日期格式
+
+
+
         
         
         
