@@ -66,7 +66,7 @@ times即最多替换次数
 
 #### 数据类型转换
 
-    data['列名']=data['列名'].astype('float')
+    data['列名']=data['列名'].astype('float64')
 
 #### 分割数据
 
@@ -76,7 +76,7 @@ times即最多替换次数
 
 方法一：
 
-    def split_time(timeadd):
+    def split_time(time_add):
 
         time_list=[]
 
