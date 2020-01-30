@@ -76,11 +76,11 @@ times即最多替换次数
 
 方法一：
 
-    def split_time(time_add):
+    def split_time(timeorigin):
 
         time_list=[]
 
-        for v in time_add:
+        for v in timeorigin:
         
             data=v.spilt(' ')[0]
 
