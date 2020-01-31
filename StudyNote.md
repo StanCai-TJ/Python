@@ -78,3 +78,35 @@
 
     tabble.query('性别=="女"')
 
+
+## groupby
+
+    table=mydata.groupby('班组')
+
+如何查看
+
+    for 班组,班组_df in table:
+
+        print(班组)
+            
+        print（班组_df）
+
+求均值
+            
+    table=mydata.groupby('班组') .mean().round(2)
+          
+多层
+
+    table2=mydata.groupby(['班组','性别']) .mean().round(2)
+        
+单独某列、两列数据
+
+    table3=mydata.groupby(['班组','性别']) .质检成绩.mean().round(2)
+
+    table4=mydata.groupby(['班组','性别']) .['质检成绩','月度接听量'].mean().round(2)         
+          
+    table5=mydata.groupby(['班组','性别']) .质检成绩.agg(functions)
+    
+生成柱形图
+    
+    table6=mydata.groupby(['班组','性别']) .质检成绩.mean().plot(kind='bar')
