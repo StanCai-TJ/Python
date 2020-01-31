@@ -1,8 +1,10 @@
 # 图形图标
 
-##柱形图
+## 柱形图
 
 matplotlib
+
+基础导入及中文文字设置
 
     import matplotlib.pyplot as plt
     from matplotlib import style
