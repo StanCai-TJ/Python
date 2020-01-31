@@ -35,7 +35,7 @@ x轴，y轴，align对齐方式
     plt.rcParams['font.sans-serif']='SimHei'
     plt.rcParams[‘axes.unicode_minus']=False
     plt.style.use('ggplot')
-    
+---    
     mydata=pd.read_excel('...')
     
  ---第一种方法(推荐)
