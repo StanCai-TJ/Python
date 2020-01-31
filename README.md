@@ -8,7 +8,7 @@ Case Study
 
 ## StudyNote
 
-Note remark
+Note&Remark
 
 ## GraphicDesign
 
