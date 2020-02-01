@@ -53,7 +53,7 @@ x轴，y轴，align对齐方式
 
     plt.bar(np.arange(len(mydata.Month)),mydata.Year2018,color='green',width=0.5)
     
----bottom是以谁为底
+    #bottom是以谁为底
 
     plt.bar(np.arange(len(mydata.Month)),mydata.Year2019,color='grey',width=0.5，bottom=mydata.Year2018)
     plt.xticks(arange(12),mydata.Month,rotation=75)
