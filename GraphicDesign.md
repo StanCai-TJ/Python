@@ -74,7 +74,8 @@ labeldistance默认是1，0.8在饼内部,radius默认大小是1,startangle角�
     
 ## 圆环图
 
-    edgecolor边缘颜色，pctdistance在饼的内部还是外部显示，width越小，孔径越大
+edgecolor边缘颜色，pctdistance在饼的内部还是外部显示，width越小，孔径越大
+
     plt.pie(x,labels=['一组','二组','三组','四组','五组'],autopct='%.2f%%',wedgeprops=dict(width=0.5,edgecolor='w'),radius=1,pctdistance=0.85)
     
 ## 两个圆环图
