@@ -63,3 +63,22 @@ x轴，y轴，align对齐方式
     plt.barh(np.arange(len(mydata.Month)),mydata.Year2018,color='green',height=0.5)
     plt.barh(np.arange(len(mydata.Month)),mydata.Year2019,color='grey',height=0.5，left=mydata.Year2018)
     plt.yticks(arange(12),mydata.Month,rotation=75)
+    
+## 饼图
+ 
+labeldistance默认是1，0.8在饼内部,radius默认大小是1,startangle角度,counterclock默认顺序,explode第一块默认取出来,shadow阴影,colors颜色,axis修正坐标轴
+
+    x=data.groupby('班组').姓名.count()
+    plt.pie(x,labels=['一组','二组','三组','四组','五组'],autopct='%.2f%%',labeldistance=0.8，radius=0.8,startangle=-270,counterclock=False,explode=[0.1,0,0,0,0],shadow=True,colors=['r','g','b','grey','y'])
+    plt.axis('equal')
+    
+## 圆环图
+
+    edgecolor边缘颜色，pctdistance在饼的内部还是外部显示，width越小，孔径越大
+    plt.pie(x,labels=['一组','二组','三组','四组','五组'],autopct='%.2f%%',wedgeprops=dict(width=0.5,edgecolor='w'),radius=1,pctdistance=0.85)
+    
+## 两个圆环图
+
+    plt.pie(x,labels=['一组','二组','三组','四组','五组'],autopct='%.2f%%',wedgeprops=dict(width=0.5,edgecolor='w'),radius=1,pctdistance=0.85)
+    plt.pie(x,autopct='%.2f%%',wedgeprops=dict(width=0.7,edgecolor='w'),radius=0.7,pctdistance=0.75)  
+    
