@@ -83,3 +83,28 @@ edgecolor边缘颜色，pctdistance在饼的内部还是外部显示，width越�
     plt.pie(x,labels=['一组','二组','三组','四组','五组'],autopct='%.2f%%',wedgeprops=dict(width=0.5,edgecolor='w'),radius=1,pctdistance=0.85)
     plt.pie(x,autopct='%.2f%%',wedgeprops=dict(width=0.7,edgecolor='w'),radius=0.7,pctdistance=0.75)  
     
+## 折线图
+
+maker指点的形状,linestyle线的形式，linewidth宽度,gca-get current axis
+
+    plt.plot(mydata.Month,mydata.Year2018,color='red',marker='o',markersize=6,linestyle='--',linewidth=5)
+    plt.plot(mydata.Month,mydata.Year2019,color='green',marker='o',markersize=6,linestyle='--',linewidth=5)
+    
+----画在两张图上，4个图，第三个数字1-4
+
+    plt.subplot(2,1,1)
+    plt.plot(mydata.Month,mydata.Year2018,color='red',marker='o',markersize=6,linestyle='--',linewidth=5)
+    plt.ylim(0,3100)
+    ax=plt.gca()
+    ax.yaxis.set_major_locator(MultipleLocator(500))
+    plt.subplot(2,1,2)
+    plt.plot(mydata.Month,mydata.Year2019,color='green',marker='o',markersize=6,linestyle='--',linewidth=5)
+    plt.ylim(0,3100)
+    ax=plt.gca()
+    ax.yaxis.set_major_locator(MultipleLocator(500))
+    
+---get current axis 给坐标轴设置坐标间隔
+
+    #取出坐标轴
+    ax=plt.gca()
+    ax.yaxis.set_major_locator(MultipleLocator(500))
