@@ -48,3 +48,18 @@ x轴，y轴，align对齐方式
     plt.bar(np.arange(len(mydata.Month))+0.25,mydata.Year2019,color='grey',width=0.25)
     更改横轴标签，生成12个点位，铺上12个月份
     plt.xticks(arange(12),mydata.Month,rotation=75)
+
+## 堆积柱形图/条形图
+
+    plt.bar(np.arange(len(mydata.Month)),mydata.Year2018,color='green',width=0.5)
+    
+---bottom是以谁为底
+
+    plt.bar(np.arange(len(mydata.Month)),mydata.Year2019,color='grey',width=0.5，bottom=mydata.Year2018)
+    plt.xticks(arange(12),mydata.Month,rotation=75)
+    
+---横向
+        
+    plt.barh(np.arange(len(mydata.Month)),mydata.Year2018,color='green',height=0.5)
+    plt.barh(np.arange(len(mydata.Month)),mydata.Year2019,color='grey',height=0.5，left=mydata.Year2018)
+    plt.yticks(arange(12),mydata.Month,rotation=75)
