@@ -183,3 +183,19 @@ maker指点的形状,linestyle线的形式，linewidth宽度,gca-get current axi
     #箱子变形，中间窄notch=True
     plt.boxplot([mydata.客户满意率,mydata.首解率,mydata.工时利用率],notch=True,patch_artist=True,boxprops=dict(linestyle='-',linewidth=1,color='black',facecolor='orange'))
     
+       
+## 双轴图标
+    
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib import style
+    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams[‘axes.unicode_minus']=False
+    plt.style.use('ggplot')
+    plt.bar(mydata.姓名,mydata.月度接听量,color='grey')
+    plt.ylabel('月度接听量')
+    #要用双轴,共用x轴，Y轴左右两个指标
+    plt.twinx()
+    plt.plot(data.姓名,data.客户满意率,color='r',linestyle='--')
+    
