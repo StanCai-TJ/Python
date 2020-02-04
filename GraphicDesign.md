@@ -151,3 +151,33 @@ maker指点的形状,linestyle线的形式，linewidth宽度,gca-get current axi
     #均值180，间隔5
     p=norm.pdf(x,180,5)
     plt.plot(x,p,color='r',linwidth=2)
+    
+    
+## 箱线图
+    
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib import style
+    ---中文字体问题
+    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams[‘axes.unicode_minus']=False
+    plt.style.use('ggplot')
+    from scipy.stats import norm
+    #boxprops箱子设计,字典形式
+    plt.boxplot(mydata.月度接听量,patch_artist=True,boxprops=dict(linestyle='-',linewidth=1,color='black',facecolor='orange'))
+--------------------------
+        plt.boxplot([mydata.客户满意率,mydata.首解率,mydata.工时利用率],patch_artist=True,boxprops=dict(linestyle='-',linewidth=1,color='black',facecolor='orange'))
+        
+---------------
+        
+    newdata=np.random.normal(180,20,[1000,4])
+            plt.boxplot(newdata,patch_artist=True,boxprops=dict(linestyle='-',linewidth=1,color='black',facecolor='orange')) 
+     
+     #直接生成5个班组的箱线图，最实用！
+     mydata.boxplot('月度接听量',by='班组',patch_artist=True,boxprops=dict(linestyle='-',linewidth=1,color='black',facecolor='orange'))
+     
+     
+     #箱子变形，中间窄notch=True
+     plt.boxplot([mydata.客户满意率,mydata.首解率,mydata.工时利用率],notch=True,patch_artist=True,boxprops=dict(linestyle='-',linewidth=1,color='black',facecolor='orange'))
+    
