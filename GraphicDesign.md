@@ -125,7 +125,5 @@ maker指点的形状,linestyle线的形式，linewidth宽度,gca-get current axi
     plt.scatter(mydata.Year2018,mydata.Year2019,marker='o',color='b',edgecolor='r')
     ---为图上的点添加数值标记
     for a,b,c in zip(mydata.Year2018,mydata.Year2019,mydata.Month)
-    
     ---va字和点的位置,加c的数值，即mydata.Month
-
         plt.text(a,b,c,ha='left',va='bottom',fontsize=11)
