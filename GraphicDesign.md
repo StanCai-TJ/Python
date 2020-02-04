@@ -199,3 +199,36 @@ maker指点的形状,linestyle线的形式，linewidth宽度,gca-get current axi
     plt.twinx()
     plt.plot(data.姓名,data.客户满意率,color='r',linestyle='--')
     
+
+## 树形图
+
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib import style
+    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams[‘axes.unicode_minus']=False
+    import squarify
+    
+    mydata=pd.read_excel('地址')
+    
+    size=mydata.月度接听量
+    labels=mydatat.姓名
+    #rate=mydata.月度接听量
+    #format两个小数位的百分比
+    rate=(mydata.月度接听量/mydata.月度接听量.sum()),apply(lambda x:format(x,'.2%'))
+    #colors=['r','b','y','c','orange']
+    squarify.plot(sizes=size,label=labels,value=rate,color=colors,edgecolor='white')
+    #随机颜色    
+    import random
+    def randomcolor():
+          colorarray=['1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+          color=''
+          for i in range(6):
+            color+=colorarray[random.randint(0,14)]
+          return '#'+color
+        
+    colors=[]
+    for i in range(len(mydata)):
+         rc=randomcolor()
+         colors.append(rc)
