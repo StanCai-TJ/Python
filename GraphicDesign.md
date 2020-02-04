@@ -97,14 +97,35 @@ maker指点的形状,linestyle线的形式，linewidth宽度,gca-get current axi
     plt.ylim(0,3100)
     ax=plt.gca()
     ax.yaxis.set_major_locator(MultipleLocator(500))
+    #为点添加数值标记a,b,b,第三个表示要标签要加的数值，即Year2018
+    for a,b in zip(mydata.Month,mydata.Year2018)
+        plt.text(a,b,b,ha='left',va='bottom',fontsize=10)
     plt.subplot(2,1,2)
     plt.plot(mydata.Month,mydata.Year2019,color='green',marker='o',markersize=6,linestyle='--',linewidth=5)
     plt.ylim(0,3100)
     ax=plt.gca()
     ax.yaxis.set_major_locator(MultipleLocator(500))
-    
+    for a,b in zip(mydata.Month,mydata.Year2019)
+        plt.text(a,b,b,ha='left',va='bottom',fontsize=10)
+        
 ---get current axis 给坐标轴设置坐标间隔
 
     #取出坐标轴
     ax=plt.gca()
     ax.yaxis.set_major_locator(MultipleLocator(500))
+    
+## 散点图
+    
+    import matplotlib.pyplot as plt
+    from matplotlib import style
+    ---中文字体问题
+    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams[‘axes.unicode_minus']=False
+    plt.style.use('ggplot')
+    plt.scatter(mydata.Year2018,mydata.Year2019,marker='o',color='b',edgecolor='r')
+    ---为图上的点添加数值标记
+    for a,b,c in zip(mydata.Year2018,mydata.Year2019,mydata.Month)
+    
+    ---va字和点的位置,加c的数值，即mydata.Month
+
+        plt.text(a,b,c,ha='left',va='bottom',fontsize=11)
