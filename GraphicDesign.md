@@ -127,3 +127,27 @@ maker指点的形状,linestyle线的形式，linewidth宽度,gca-get current axi
     for a,b,c in zip(mydata.Year2018,mydata.Year2019,mydata.Month)
     ---va字和点的位置,加c的数值，即mydata.Month
         plt.text(a,b,c,ha='left',va='bottom',fontsize=11)
+
+## 直方图叠加正太分布曲线
+
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib import style
+    ---中文字体问题
+    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams[‘axes.unicode_minus']=False
+    plt.style.use('ggplot')
+    from scipy.stats import norm
+    #生成数据，normal第一个是均值，第二个是标准差,第三个是数据量
+    data=np.random.normal(180,5,1000)
+    #直方图,bins几个柱子,rwidth柱子间的间隙,默认是1，没有间隔,density，如果要正太分布曲线，就必须添加
+    #或者bins=[160,170,180,190,200]或者bins='auto'
+    plt.hist(data,bins=30,rwidth=0.95,color='grey',density=True)
+    #取最小最大值,pdf概率密度函数
+    xmin,xmax=plt.xlim()
+    #切100个点
+    x=np.linspace(xmin,xmax,100)
+    #均值180，间隔5
+    p=norm.pdf(x,180,5)
+    plt.plot(x,p,color='r',linwidth=2)
