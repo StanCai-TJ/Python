@@ -110,3 +110,20 @@
 生成柱形图
     
     table6=mydata.groupby(['班组','性别']) .质检成绩.mean().plot(kind='bar')
+    
+    
+## 相关性分析的一个思路
+      
+    import pandas as pd
+
+    df = pd.DataFrame([ ["hello there", 100],
+                        ["hello kid",   95],
+                        ["there kid",   5]
+                      ], columns = ['Sentence','Score'])
+
+    s_corr = df.Sentence.str.get_dummies(sep=' ').corrwith(df.Score/df.Score.max())
+    print (s_corr)
+    
+hello    0.998906
+kid     -0.539949
+there   -0.458957
