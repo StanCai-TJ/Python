@@ -3,7 +3,7 @@
     import matplotlib.pyplot as plt
     from scipy import stats
     plt.rcParams['font.sans-serif']='SimHei'
-    plt.rcParams[‘axes.unicode_minus']=False
+    plt.rcParams['axes.unicode_minus']=False
     import seaborn as sns
     sns.set(font='LiSu')
 
@@ -35,5 +35,21 @@ relplot 默认散点图,style不同班组显示不同形状,hue颜色饱和度
 
     df=pd.read_excel('地址')
     sns.catplot(x='组别',y='月度接听量',data=df,hue='性别',kind='swarm')
+    
+## 箱线图与提琴图
 
-
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy import stats
+    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams['axes.unicode_minus']=False
+    import seaborn as sns
+    sns.set(font='LiSu')
+    
+### 箱线图,hue用来区分，例如男女
+    df=read_excel('')
+    sns.catplot(x='班组',y='月度接听量',kind='box',hue='性别')
+### 提琴图,split不分成两张图，在一张图上用两种颜色区分
+    sns.catplot(x='班组',y='月度接听量',kind='violin',hue='性别',split=True)
+    
