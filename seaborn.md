@@ -68,6 +68,18 @@ orient='h'横
 
     sns.catplot(x='班组',y='月度接听量',data=df,kind='point',ci=None,hue='性别')
     
+## 多重图标
+画布多个子图
+2张图表
 
+    sna.catplot(x='组别',y='月度接听量',data=df,kind='swarm',col='性别')
+    
+3张图表
+
+    sna.catplot(x='组别',y='月度接听量',data=df,kind='swarm',col='客户满意度')
+    
+6张图表:height*aspect=宽
+    
+    sna.catplot(x='组别',y='月度接听量',data=df,kind='swarm',col='客户满意度'，row='性别',height=2,aspect=2)
     
     
