@@ -53,3 +53,21 @@ relplot 默认散点图,style不同班组显示不同形状,hue颜色饱和度
 ### 提琴图,split不分成两张图，在一张图上用两种颜色区分
     sns.catplot(x='班组',y='月度接听量',kind='violin',hue='性别',split=True)
     
+## 柱形图
+
+ci-confidence interval,默认是均值,estimator可以改为max,min,sum
+
+    sns.catplot(x='班组',y='月度接听量',data=df,kind='bar',ci=None,estimator=min,color='r',hue='性别')
+    
+## 条形图
+orient='h'横
+
+    sns.catplot(x='月度接听量',y='班组',data=df,kind='bar',ci=None,estimator=min,color='r',hue='性别',orient='h')
+    
+## 点图
+
+    sns.catplot(x='班组',y='月度接听量',data=df,kind='point',ci=None,hue='性别')
+    
+
+    
+    
