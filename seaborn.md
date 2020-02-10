@@ -111,5 +111,20 @@ hist是否有柱子,kde是否有折线,rug=True密度情况，fit正态分布曲
 
     sns.kdeplot(df.月度接听量,df.平均处理时长,shade=True,color='blue',alpha=0.8,cbar=True)
     
+## 热力图
+
+annot显示具体数据,.0f没有小数点,cmap配色
+
+    sns.heatmap(df,annot=True,fmt='.0f',cmpa='rainbow')
+    sns.heatmap(df,annot=True,fmt='.0f',cmpa='Greens')
     
+透视
+
+    df1=pd.read_excel('D:/Software/Project1/质检数据分析.xlsx')
+    df2=df1.pivot_table(index='组别',columns='差错量',values='月度接听量',aggfunc='max')
+    sns.heatmap(df2,annot=True,fmt='.0f',cmap='summer')
+    
+相关系数热力图
+
+    sns.heatmap(df1.corr(),cmap='blues')
     
