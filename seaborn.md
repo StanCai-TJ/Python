@@ -97,13 +97,19 @@ orient='h'横
     
 ## 直方图和密度图
 
-    #hist是否有柱子,kde是否有折线,rug=True密度情况，fit正态分布曲线
+hist是否有柱子,kde是否有折线,rug=True密度情况，fit正态分布曲线
+
     sns.distplot(df.月度接听量,bins=25,hist=True,kde=True,rug=False,color='g',fit=ststs.norm)
-    #密度情况,shade面积情况,alpha透明情况
-    #两组数据
+    
+密度情况,shade面积情况,alpha透明情况
+两组数据
+
     sns.kdeplot(df.月度接听量[df.组别==1],shade=True,color='r',alpha=0.3,label='班组1')
     sns.kdeplot(df.月度接听量[df.组别==2],shade=True,color='g',alpha=0.3,label='班组2')
-    #两个数据量,cbar增加颜色指示条
+    
+两个数据量,cbar增加颜色指示条
+
     sns.kdeplot(df.月度接听量,df.平均处理时长,shade=True,color='blue',alpha=0.8,cbar=True)
+    
     
     
