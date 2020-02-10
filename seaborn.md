@@ -68,7 +68,7 @@ orient='h'横
 
     sns.catplot(x='班组',y='月度接听量',data=df,kind='point',ci=None,hue='性别')
     
-## 多重图标
+## 多重图表
 画布多个子图
 2张图表
 
@@ -81,5 +81,20 @@ orient='h'横
 6张图表:height*aspect=宽
     
     sna.catplot(x='组别',y='月度接听量',data=df,kind='swarm',col='客户满意度'，row='性别',height=2,aspect=2)
+    
+## 折线图
+
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy import stats
+    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams['axes.unicode_minus']=False
+    import seaborn as sns
+    sns.set(font='LiSu')
+    #dashes虚线
+    sns.relplot(x='日期',y='话量',data=df,kind='line'，ci=None,hue='话型',style='话型',dashes=True,markers,markers=True)
+
+
     
     
