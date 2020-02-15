@@ -7,7 +7,6 @@
     import seaborn as sns
     sns.set(font='LiSu')
 
-    mydata=pd.read_excel('地址')
 
 ## 散点图
 
