@@ -2,7 +2,7 @@
     import numpy as np
     import matplotlib.pyplot as plt
     from scipy import stats
-    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams['font.sans-serif']=['SimHei']
     plt.rcParams['axes.unicode_minus']=False
     import seaborn as sns
     sns.set(font='LiSu')
@@ -42,7 +42,7 @@ relplot 默认散点图,style不同班组显示不同形状,hue颜色饱和度
     import numpy as np
     import matplotlib.pyplot as plt
     from scipy import stats
-    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams['font.sans-serif']=['SimHei']
     plt.rcParams['axes.unicode_minus']=False
     import seaborn as sns
     sns.set(font='LiSu')
@@ -88,7 +88,7 @@ orient='h'横
     import numpy as np
     import matplotlib.pyplot as plt
     from scipy import stats
-    plt.rcParams['font.sans-serif']='SimHei'
+    plt.rcParams['font.sans-serif']=['SimHei']
     plt.rcParams['axes.unicode_minus']=False
     import seaborn as sns
     sns.set(font='LiSu')
@@ -128,3 +128,37 @@ annot显示具体数据,.0f没有小数点,cmap配色
 
     sns.heatmap(df1.corr(),cmap='blues')
     
+## 雷达图
+
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy import stats
+    plt.rcParams['font.sans-serif'] = ['SimHei']
+    plt.rcParams['axes.unicode_minus'] = False
+    import seaborn as sns
+    sns.set(font='LiSu')
+    df = pd.read_excel('./质检数据分析.xlsx')
+    df1 = df.groupby('组别').月度接听量.mean().astype('int')
+    #准备标签和数据
+    labels=np.array(['一组','二组','三组','四组','五组'])
+    values=np.array(df1)
+    #endpoint 没有终点
+    angles=np.linspace(0,2*np.pi,len(labels),endpoint=False)
+    axises=np.concatenate((angles,[angles[0]]))
+    values=np.concatenate((values,[values[0]]))
+    #projection投射,lw线的宽度,alpha透明度
+    ax=plt.subplot(111,projection='polar')
+    ax.plot(axises,values,'m-',lw=1,alpha=0.5)
+    #填充
+    ax.fill(axises,values,'b',alpha=0.5)
+    #axises*180/np.pi定位度数，贴上标签
+    ax.set_thetagrids(axises*180/np.pi,labels)
+    #调整y轴刻度
+    ax.set_ylim(0,3000)
+    #调整起始点位置，从正北开始
+    ax.set_theta_zero_location('N')
+    #pad标题的距离
+    ax.set_title('月度接听量均值对比',fontsize=20,pad=20)
+    #图要显示全部
+    plt.tight_layout()
