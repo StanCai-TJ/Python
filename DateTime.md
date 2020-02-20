@@ -1,7 +1,3 @@
-timedelta的换算
-
-    data['DATEDIFF']=data['DATEDIFF'].dt.days
-
 ## busday_count的使用
 
 #### 日期计算
@@ -21,5 +17,10 @@ np.busday_count，使用weekmask,holidays参数处理调休问题 (常规weekmas
 
     holidays_list=['2020-02-20']
     data['C']=np.busday_count(data['A'].values.astype('datetime64[D]'),data['B'].values.astype('datetime64[D]'),weekmask='1111111',holidays=holidays_list)
+    
+    
+补充：timedelta的换算
+
+    data['DATEDIFF']=data['DATEDIFF'].dt.days
     
     
