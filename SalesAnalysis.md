@@ -55,6 +55,10 @@ times即最多替换次数
 #### 删除缺失数据
 
     data = data.dropna(subset=['列名1','列名2']，how='any')
+    
+#### 删除某列数值是NaN的所在行
+
+    data=data[data['A'].notna()]
 
 ####  缺失值填充
 
@@ -86,7 +90,7 @@ times即最多替换次数
 
             time_list.append(data)
             
-        time_series=Series(timelist)
+        time_series=pd.series(timelist)
         
         return time_series
         
