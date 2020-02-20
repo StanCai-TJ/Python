@@ -17,5 +17,9 @@ np.busday_count，使用holidays参数
     holidays_list=['2020-02-20','2020-02-21']
     data['C']=np.busday_count(data['A'].values.astype('datetime64[D]'),data['B'].values.astype('datetime64[D]'),holidays=holidays_list)
     
+np.busday_count，使用weekmask,holidays参数处理调休问题 (常规weekmask='1111100')
+
+    holidays_list=['2020-02-20']
+    data['C']=np.busday_count(data['A'].values.astype('datetime64[D]'),data['B'].values.astype('datetime64[D]'),weekmask='1111111',holidays=holidays_list)
     
     
