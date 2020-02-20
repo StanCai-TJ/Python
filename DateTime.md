@@ -1,2 +1,4 @@
 timedelta的换算
-data['DATEDIFF']=data['DATEDIFF'].dt.days
+
+  data['DATEDIFF']=data['DATEDIFF'].dt.days
+
