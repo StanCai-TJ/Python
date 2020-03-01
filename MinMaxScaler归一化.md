@@ -1,8 +1,8 @@
 ## 归一化处理
 
-(N-MIN)/(MAX-MIN)
-
 MinMaxScaler方法
+
+(N-MIN)/(MAX-MIN)
 
     import pandas as pd
     from sklearn.preprocessing import MinMaxScaler
@@ -14,3 +14,16 @@ MinMaxScaler方法
     data['A_Z'] = scaler_2.fit_transform(data['A'].values.reshape(-1,1))
 
     print(data['A_Z'])
+
+## 标准化处理
+
+StandardScaler方法
+
+标准化standardization
+
+    import pandas as pd
+    from sklearn.preprocessing import StandardScaler
+    data= pd.read_excel('./standard_test.xlsx')
+    scaler_2 = StandardScaler()
+    data['B'] = scaler_2.fit_transform(data['A'].values.reshape(-1,1))
+    print(data['B'])
