@@ -127,3 +127,7 @@
 hello    0.998906
 kid     -0.539949
 there   -0.458957
+
+### 快速解决百分比格式的方法
+
+    data.A.apply(lambda x:format(x,'.2f%'))
