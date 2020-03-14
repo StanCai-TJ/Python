@@ -32,7 +32,7 @@
 
     df3=df1.drop(['性别','教育程度'],1)
   
-## loc/iloc
+### loc/iloc
 
 0到5行
 
@@ -54,7 +54,7 @@
 
     df.iloc[[0,5,10],[0,5,8]] 
   
-## 数据透视表
+### 数据透视表
 
 班组 y轴  教育程度x轴
 
@@ -79,7 +79,7 @@
     tabble.query('性别=="女"')
 
 
-## groupby
+### groupby
 
     table=mydata.groupby('班组')
 
@@ -112,7 +112,7 @@
     table6=mydata.groupby(['班组','性别']) .质检成绩.mean().plot(kind='bar')
     
     
-## 相关性分析的一个思路
+### 相关性分析的一个思路
       
     import pandas as pd
 
