@@ -131,3 +131,12 @@ there   -0.458957
 ### 快速解决百分比格式的方法
 
     data.A.apply(lambda x:format(x,'.2f%'))
+
+### Pandas Query的查询用法
+
+    data.query('班组==1 & 性别=="男"')
+    #输入互动查询的一种方法
+    group=input('请输入班组：')
+    gender=input('请输入性别：')
+    data.query('班组==@group & 性别==@gender')
+    
